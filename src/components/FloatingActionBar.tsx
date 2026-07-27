@@ -30,7 +30,7 @@ const FloatingActionBar = ({ whatsappMessage, rtl = false }: FloatingActionBarPr
 
   return (
     <div
-      className={`fixed top-1/2 z-50 hidden -translate-y-1/2 flex-col gap-3 md:flex ${rtl ? 'left-4' : 'right-4'}`}
+      className={`fixed bottom-28 z-50 hidden flex-col gap-3 md:flex ${rtl ? 'left-5 lg:left-6' : 'right-5 lg:right-6'} lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2`}
     >
       <a
         href={`tel:${config.phoneNumber}`}

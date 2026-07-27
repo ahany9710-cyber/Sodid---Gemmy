@@ -1,14 +1,20 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronDown, Menu, Search, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { sitePagesEn } from '../data/siteNavLinks';
 
 const LOGO = './sections/hero/logo.svg';
 
-const NAV_LINKS = [
-  { href: '#community-section', label: 'About Sodic' },
-  { href: '#interactive-filter', label: 'Developments' },
-  { href: '#property-finder', label: 'Life at Sodic' },
+const OGAMI_SECTION_LINKS = [
+  { href: '#ogami-units', label: 'Homes' },
+  { href: '#ogami-location', label: 'Location' },
+  { href: '#ogami-gallery', label: 'Gallery' },
+  { href: '#lead-form', label: 'Brochure' },
+];
+
+const EAST_SECTION_LINKS = [
+  { href: '#east-units', label: 'Units' },
+  { href: '#east-lead-form', label: 'Brochure' },
 ];
 
 const Header = () => {
@@ -20,7 +26,9 @@ const Header = () => {
         ? '/ar/east'
         : pathname === '/ogami'
           ? '/ar/ogami'
-          : '/ar';
+          : pathname === '/privacy'
+            ? '/ar/privacy'
+            : '/ar';
 
   const leadFormHash =
     pathname === '/eastvale'
@@ -29,13 +37,25 @@ const Header = () => {
         ? '#east-lead-form'
         : '#lead-form';
 
-  const isProjectLanding = pathname === '/east' || pathname === '/eastvale' || pathname === '/ogami';
+  const isOgamiHome = pathname === '/' || pathname === '/ogami';
+  const isEast = pathname === '/east';
+  const isEastvale = pathname === '/eastvale';
+  const isPrivacy = pathname === '/privacy';
+
+  const sectionLinks = isOgamiHome
+    ? OGAMI_SECTION_LINKS
+    : isEast
+      ? EAST_SECTION_LINKS
+      : isEastvale
+        ? [{ href: '#eastvale-lead-form', label: 'Brochure' }]
+        : [];
 
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
 
-  const lightMode = scrolled || menuOpen || isProjectLanding;
+  // White header only after scroll / menu / solid pages — never force over dark hero
+  const lightMode = scrolled || menuOpen || isPrivacy;
 
   useEffect(() => {
     const updateScrollState = () => setScrolled(window.scrollY > 24);
@@ -66,10 +86,10 @@ const Header = () => {
     <header
       ref={headerRef}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        lightMode ? 'bg-white/95 backdrop-blur-md border-b border-gray-100' : 'bg-transparent'
+        lightMode ? 'border-b border-gray-100 bg-white/95 backdrop-blur-md' : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto max-w-[1600px] px-6 md:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
         <div className="flex h-16 items-center justify-between gap-6 md:h-20">
           <a href="#hero" onClick={(e) => scrollToSection(e, '#hero')} className="inline-flex items-center">
             <img
@@ -82,30 +102,29 @@ const Header = () => {
             />
           </a>
 
-          <nav className="hidden lg:flex items-center gap-6" aria-label="Main navigation">
-            {NAV_LINKS.map((link) => (
+          <nav className="hidden items-center gap-5 lg:flex" aria-label="Main navigation">
+            {sectionLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className={`inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors ${
+                className={`text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors ${
                   lightMode ? 'text-zinc-700 hover:text-black' : 'text-white/90 hover:text-white'
                 }`}
               >
                 {link.label}
-                <ChevronDown size={13} />
               </a>
             ))}
             <a
               href={leadFormHash}
               onClick={(e) => scrollToSection(e, leadFormHash)}
-              className={`px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] rounded-none border transition-colors ${
+              className={`rounded-none border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors ${
                 lightMode
                   ? 'border-zinc-300 bg-white text-black hover:bg-zinc-100'
                   : 'border-white/80 bg-white text-black hover:bg-zinc-100'
               }`}
             >
-              Register Your Interest
+              Get the brochure
             </a>
             <Link
               to={arabicHref}
@@ -115,20 +134,11 @@ const Header = () => {
             >
               العربية
             </Link>
-            <button
-              type="button"
-              className={`grid h-8 w-8 place-items-center border rounded-none transition-colors ${
-                lightMode ? 'border-zinc-300 text-black' : 'border-white/70 text-white'
-              }`}
-              aria-label="Search"
-            >
-              <Search size={14} />
-            </button>
           </nav>
 
           <button
             type="button"
-            className={`grid h-10 w-10 shrink-0 place-items-center border rounded-none ${
+            className={`grid h-10 w-10 shrink-0 place-items-center rounded-none border lg:hidden ${
               lightMode ? 'border-zinc-300 text-black' : 'border-white/60 text-white'
             }`}
             aria-expanded={menuOpen}
@@ -142,64 +152,61 @@ const Header = () => {
       </div>
 
       {menuOpen ? (
-          <div
-            id="mobile-nav"
-            className="border-t border-gray-100 bg-white"
-          >
-            <nav className="px-6 py-4 flex flex-col gap-1" aria-label="Mobile navigation">
-              <p className="pb-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500">Pages</p>
-              {sitePagesEn.map((item) => {
-                const active = pathname === item.to;
-                return (
-                  <Link
-                    key={item.to}
-                    to={item.to}
-                    className={`py-3 text-sm font-semibold tracking-wide transition-colors border-b border-gray-100 ${
-                      active ? 'text-black' : 'text-zinc-700 hover:text-black'
-                    }`}
-                    onClick={() => setMenuOpen(false)}
+        <div id="mobile-nav" className="border-t border-gray-100 bg-white">
+          <nav className="flex flex-col gap-1 px-6 py-4" aria-label="Mobile navigation">
+            <p className="pb-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500">Pages</p>
+            {sitePagesEn.map((item) => {
+              const active = pathname === item.to;
+              return (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className={`border-b border-gray-100 py-3 text-sm font-semibold tracking-wide transition-colors ${
+                    active ? 'text-black' : 'text-zinc-700 hover:text-black'
+                  }`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.label}
+                  {active ? <span className="sr-only"> (current)</span> : null}
+                </Link>
+              );
+            })}
+
+            {sectionLinks.length > 0 ? (
+              <>
+                <p className="pb-1 pt-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500">
+                  This page
+                </p>
+                {sectionLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => scrollToSection(e, link.href)}
+                    className="border-b border-gray-100 py-3 text-sm font-semibold tracking-wide text-zinc-800"
                   >
-                    {item.label}
-                    {active ? <span className="sr-only"> (current)</span> : null}
-                  </Link>
-                );
-              })}
+                    {link.label}
+                  </a>
+                ))}
+              </>
+            ) : null}
 
-              {pathname === '/' ? (
-                <>
-                  <p className="pb-1 pt-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500">
-                    This page
-                  </p>
-                  {NAV_LINKS.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      onClick={(e) => scrollToSection(e, link.href)}
-                      className="py-3 text-sm font-semibold uppercase tracking-[0.08em] text-zinc-800 border-b border-gray-100"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </>
-              ) : null}
-
-              <a
-                href={leadFormHash}
-                onClick={(e) => scrollToSection(e, leadFormHash)}
-                className="mt-3 inline-flex justify-center border border-black bg-black px-4 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-white"
-              >
-                Register Your Interest
-              </a>
-              <Link
-                to={arabicHref}
-                className="mt-2 inline-flex justify-center py-3 text-xs font-semibold text-black"
-                onClick={() => setMenuOpen(false)}
-              >
-                العربية
-              </Link>
-            </nav>
-          </div>
-        ) : null}
+            <a
+              href={leadFormHash}
+              onClick={(e) => scrollToSection(e, leadFormHash)}
+              className="mt-3 inline-flex justify-center border border-black bg-black px-4 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-white"
+            >
+              Get the brochure
+            </a>
+            <Link
+              to={arabicHref}
+              className="mt-2 inline-flex justify-center py-3 text-xs font-semibold text-black"
+              onClick={() => setMenuOpen(false)}
+            >
+              العربية
+            </Link>
+          </nav>
+        </div>
+      ) : null}
     </header>
   );
 };

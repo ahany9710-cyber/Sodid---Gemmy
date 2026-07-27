@@ -17,16 +17,18 @@ const OgamiUnitTypes = () => {
   const sideLines = u.sideNote.split('\n');
 
   return (
-    <section id="ogami-units" className="bg-white px-6 py-16 md:px-16 md:py-24">
-      <div className="mx-auto max-w-[1600px]">
+    <section id="ogami-units" className="bg-white px-6 py-16 md:px-10 md:py-24 lg:px-12">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-10 flex flex-col gap-6 md:mb-14 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <p className="text-[11px] font-semibold tracking-wider text-zinc-500">{u.eyebrow}</p>
-            <h2 className={`${fontClass} mt-3 text-3xl font-bold leading-tight text-black md:text-5xl`}>{u.title}</h2>
+            <h2 className={`${fontClass} mt-3 text-3xl font-bold leading-tight text-black md:text-4xl lg:text-5xl`}>
+              {u.title}
+            </h2>
             <p className={`${fontClass} mt-4 text-sm leading-relaxed text-zinc-600 md:text-base`}>{u.lead}</p>
           </div>
           <p
-            className={`${fontClass} text-sm text-zinc-500 md:max-w-xs md:text-base ${locale === 'ar' ? 'md:text-end' : ''}`}
+            className={`${fontClass} text-sm text-zinc-500 md:max-w-xs md:text-base ${locale === 'ar' ? 'md:text-start' : ''}`}
           >
             {sideLines.map((line, i) => (
               <span key={line}>
@@ -37,18 +39,19 @@ const OgamiUnitTypes = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+        {/* 2 columns on desktop — 4 skinny columns crush long Arabic CTAs & prices */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
           {u.items.map((unit) => (
             <article
               key={unit.id}
               className="group flex flex-col overflow-hidden border border-zinc-200 bg-white transition-all hover:border-black hover:shadow-lg"
             >
-              <div className="relative h-56 overflow-hidden bg-stone-100 md:h-64">
+              <div className="relative h-56 overflow-hidden bg-stone-100 sm:h-64 lg:h-72">
                 <img
                   src={unit.image}
                   alt={unit.title}
                   width={640}
-                  height={256}
+                  height={288}
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -62,26 +65,44 @@ const OgamiUnitTypes = () => {
                 </span>
               </div>
 
-              <div className="flex flex-1 flex-col p-6">
+              <div className="flex flex-1 flex-col p-5 sm:p-6 lg:p-7">
                 <p className="text-[10px] font-semibold tracking-wider text-zinc-600">{unit.subtitle}</p>
-                <h3 className={`${fontClass} mt-2 text-2xl font-bold leading-tight text-black md:text-3xl`}>{unit.title}</h3>
+                <h3 className={`${fontClass} mt-2 text-xl font-bold leading-tight text-black sm:text-2xl`}>
+                  {unit.title}
+                </h3>
 
                 <div className="mt-4 border border-zinc-200 bg-stone-50">
                   <div
                     className={`grid grid-cols-2 ${
-                      priceGridRtl ? '[direction:rtl] divide-x divide-x-reverse divide-zinc-200' : 'divide-x divide-zinc-200'
+                      priceGridRtl
+                        ? '[direction:rtl] divide-x divide-x-reverse divide-zinc-200'
+                        : 'divide-x divide-zinc-200'
                     }`}
                   >
-                    <div className="px-4 py-4">
-                      <p className={`${fontClass} text-[11px] font-semibold tracking-wide text-zinc-500`}>{unit.dpLabel}</p>
-                      <p className={`${fontClass} mt-1 text-xl font-extrabold leading-tight text-black md:text-2xl`}>{unit.dpValue}</p>
+                    <div className="px-3 py-3 sm:px-4 sm:py-4">
+                      <p className={`${fontClass} text-[10px] font-semibold tracking-wide text-zinc-500 sm:text-[11px]`}>
+                        {unit.dpLabel}
+                      </p>
+                      <p
+                        className={`${fontClass} mt-1 text-base font-extrabold leading-snug text-black sm:text-lg lg:text-xl`}
+                      >
+                        {unit.dpValue}
+                      </p>
                     </div>
-                    <div className="px-4 py-4">
-                      <p className={`${fontClass} text-[11px] font-semibold tracking-wide text-zinc-500`}>{unit.priceLabel}</p>
-                      <p className={`${fontClass} mt-1 text-xl font-extrabold leading-tight text-black md:text-2xl`}>{unit.priceValue}</p>
+                    <div className="px-3 py-3 sm:px-4 sm:py-4">
+                      <p className={`${fontClass} text-[10px] font-semibold tracking-wide text-zinc-500 sm:text-[11px]`}>
+                        {unit.priceLabel}
+                      </p>
+                      <p
+                        className={`${fontClass} mt-1 text-base font-extrabold leading-snug text-black sm:text-lg lg:text-xl`}
+                      >
+                        {unit.priceValue}
+                      </p>
                     </div>
                   </div>
-                  <p className={`${fontClass} border-t border-zinc-200 px-4 py-2 text-center text-[11px] font-semibold text-zinc-600`}>
+                  <p
+                    className={`${fontClass} border-t border-zinc-200 px-4 py-2 text-center text-[11px] font-semibold text-zinc-600`}
+                  >
                     {u.paymentNote}
                   </p>
                 </div>
@@ -98,7 +119,9 @@ const OgamiUnitTypes = () => {
                   })}
                 </ul>
 
-                <ul className={`${fontClass} mt-4 grid grid-cols-2 gap-x-3 gap-y-1 border-t border-zinc-100 pt-4 text-xs text-zinc-600`}>
+                <ul
+                  className={`${fontClass} mt-4 grid grid-cols-2 gap-x-3 gap-y-1 border-t border-zinc-100 pt-4 text-xs text-zinc-600`}
+                >
                   {unit.features.map((f) => (
                     <li key={f} className="flex items-center gap-1.5">
                       <span className="h-1 w-1 shrink-0 rounded-full bg-black" />
@@ -107,15 +130,17 @@ const OgamiUnitTypes = () => {
                   ))}
                 </ul>
 
-                <UnitCardActions
-                  onFormClick={scrollToLeadForm}
-                  waHref={getWhatsAppLink({ text: unit.waPrefill })}
-                  formLabel={u.book}
-                  callLabel={copy.urgency.call}
-                  whatsappLabel={u.inquire}
-                  locale={locale}
-                  fontClass={fontClass}
-                />
+                <div className="mt-auto">
+                  <UnitCardActions
+                    onFormClick={scrollToLeadForm}
+                    waHref={getWhatsAppLink({ text: unit.waPrefill })}
+                    formLabel={u.book}
+                    callLabel={copy.urgency.call}
+                    whatsappLabel={u.inquire}
+                    locale={locale}
+                    fontClass={fontClass}
+                  />
+                </div>
               </div>
             </article>
           ))}

@@ -12,8 +12,8 @@ const OgamiFAQ = () => {
   const waHref = getWhatsAppLink({ text: whatsappOgami });
 
   return (
-    <section id="ogami-faq" className="bg-white px-6 py-16 md:px-16 md:py-24">
-      <div className="mx-auto max-w-4xl">
+    <section id="ogami-faq" className="bg-white px-6 py-16 md:px-10 md:py-24 lg:px-12">
+      <div className="mx-auto max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +22,9 @@ const OgamiFAQ = () => {
           className="mb-10 md:mb-14"
         >
           <p className="text-[11px] font-semibold tracking-wider text-zinc-500">{f.eyebrow}</p>
-          <h2 className={`${fontClass} mt-3 text-3xl font-bold leading-tight text-black md:text-5xl`}>{f.title}</h2>
+          <h2 className={`${fontClass} mt-3 text-3xl font-bold leading-tight text-black md:text-4xl lg:text-5xl`}>
+            {f.title}
+          </h2>
         </motion.div>
 
         <div className="border-y border-zinc-200">

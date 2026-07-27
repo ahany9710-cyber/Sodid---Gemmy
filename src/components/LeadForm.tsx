@@ -166,14 +166,16 @@ const LeadForm = ({
       className={sectionClassName ?? 'bg-white px-6 py-12 md:px-16 md:py-16'}
     >
       <div className="mx-auto max-w-xl">
-        <h2
-          className={`text-4xl font-bold text-black md:text-5xl ${isAr ? 'font-arabic' : 'font-heading'}`}
-        >
-          {title}
-        </h2>
-        <p className="mt-3 text-gray-600">{subtitle}</p>
+        {title ? (
+          <h2
+            className={`text-4xl font-bold text-black md:text-5xl ${isAr ? 'font-arabic' : 'font-heading'}`}
+          >
+            {title}
+          </h2>
+        ) : null}
+        {subtitle ? <p className={`text-gray-600 ${title ? 'mt-3' : ''}`}>{subtitle}</p> : null}
 
-        <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+        <form onSubmit={handleSubmit} className={`${title || subtitle ? 'mt-8' : ''} space-y-5`}>
           <div>
             <label htmlFor={fieldId('fullName')} className="mb-2 block text-sm font-semibold text-black">
               {labelName}{' '}

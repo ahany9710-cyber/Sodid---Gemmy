@@ -38,7 +38,7 @@ const OgamiUrgencyStrip = () => {
       className={`relative border-y border-white/10 bg-black text-white ${fontClass}`}
       aria-label={u.aria}
     >
-      <div className="mx-auto flex max-w-[1600px] flex-col gap-5 px-6 py-5 md:flex-row md:items-center md:justify-between md:gap-8 md:px-16 md:py-6">
+      <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-5 md:flex-row md:items-center md:justify-between md:gap-8 md:px-10 md:py-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -29,22 +29,24 @@ const OgamiGallery = () => {
   const NextIcon = isRtl ? ChevronLeft : ChevronRight;
 
   return (
-    <section id="ogami-gallery" className="bg-white py-16 md:py-24">
-      <div className="px-6 md:px-16">
+    <section id="ogami-gallery" className="bg-white px-6 py-16 md:px-10 md:py-24 lg:px-12">
+      <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="mx-auto mb-10 max-w-2xl md:mb-14"
+          className="mb-10 max-w-2xl md:mb-14"
         >
           <p className="text-[11px] font-semibold tracking-wider text-zinc-500">{g.eyebrow}</p>
-          <h2 className={`${fontClass} mt-3 text-3xl font-bold leading-tight text-black md:text-5xl`}>{g.title}</h2>
+          <h2 className={`${fontClass} mt-3 text-3xl font-bold leading-tight text-black md:text-4xl lg:text-5xl`}>
+            {g.title}
+          </h2>
           <p className={`${fontClass} mt-4 text-sm leading-relaxed text-zinc-600 md:text-base`}>{g.lead}</p>
         </motion.div>
 
         <div
-          className="relative mx-auto max-w-4xl overflow-hidden bg-stone-100 shadow-lg ring-1 ring-zinc-200"
+          className="relative mx-auto max-w-5xl overflow-hidden bg-stone-100 shadow-lg ring-1 ring-zinc-200"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           onFocusCapture={() => setPaused(true)}
