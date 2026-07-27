@@ -107,13 +107,14 @@ const OgamiHero = () => {
               >
                 {h.ctaBook}
               </button>
-              <a
-                href={waHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackMarketingContact('whatsapp')}
-                className={`${fontClass} inline-flex min-h-12 items-center justify-center gap-2 bg-[#107C41] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0C6836] sm:text-base`}
-              >
+            <a
+              href={waHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackMarketingContact('whatsapp')}
+              aria-label={locale === 'ar' ? 'واتساب — استفسار Bloom Island' : 'WhatsApp — Bloom Island inquiry'}
+              className={`${fontClass} inline-flex min-h-12 items-center justify-center gap-2 bg-[#107C41] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0C6836] sm:text-base`}
+            >
                 <MessageCircle size={18} />
                 {h.ctaWhatsapp}
               </a>

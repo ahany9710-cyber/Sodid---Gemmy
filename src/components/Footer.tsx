@@ -63,14 +63,14 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/15 pt-6 text-sm text-gray-500">
+        <div className="mt-12 border-t border-white/15 pt-6 text-sm text-gray-400">
           <p>
             &copy; {new Date().getFullYear()} Project trademarks belong to their owners. Site operated by Flair
             Agency.
           </p>
-          <p className="mt-3 max-w-3xl text-xs leading-relaxed text-gray-500 md:text-sm">{agencyDisclaimerEn}</p>
+          <p className="mt-3 max-w-3xl text-xs leading-relaxed text-gray-400 md:text-sm">{agencyDisclaimerEn}</p>
           <p className="mt-3">
-            <Link to="/privacy" className="underline underline-offset-4 hover:text-gray-300">
+            <Link to="/privacy" className="text-gray-300 underline underline-offset-4 hover:text-white">
               Privacy Policy
             </Link>
           </p>

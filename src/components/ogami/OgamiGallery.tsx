@@ -112,8 +112,8 @@ const OgamiGallery = () => {
                 aria-selected={i === index}
                 aria-label={`${i + 1} / ${slideCount}`}
                 onClick={() => goTo(i)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  i === index ? 'w-6 bg-white' : 'w-1.5 bg-white/45 hover:bg-white/70'
+                className={`h-2.5 min-h-[10px] min-w-[10px] rounded-full transition-all duration-300 ${
+                  i === index ? 'w-7 bg-white' : 'w-2.5 bg-white/45 hover:bg-white/70'
                 }`}
               />
             ))}

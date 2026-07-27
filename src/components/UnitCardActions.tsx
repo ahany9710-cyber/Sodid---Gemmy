@@ -10,6 +10,10 @@ export interface UnitCardActionsProps {
   formLabel: string;
   callLabel: string;
   whatsappLabel: string;
+  /** Unique accessible name so multiple WA CTAs don't fail identical-links audit */
+  whatsappAriaLabel?: string;
+  callAriaLabel?: string;
+  formAriaLabel?: string;
   locale?: UnitCardActionsLocale;
   fontClass?: string;
   className?: string;
@@ -24,6 +28,9 @@ const UnitCardActions = ({
   formLabel,
   callLabel,
   whatsappLabel,
+  whatsappAriaLabel,
+  callAriaLabel,
+  formAriaLabel,
   locale = 'en',
   fontClass = '',
   className = 'mt-6',
@@ -32,8 +39,8 @@ const UnitCardActions = ({
 }: UnitCardActionsProps) => {
   const FormArrow = locale === 'ar' ? ArrowLeft : ArrowRight;
   const btn = compact
-    ? `inline-flex w-full items-center justify-center gap-1 px-2 py-2 text-[10px] font-bold transition-colors`
-    : `inline-flex items-center justify-center gap-1.5 px-3 py-3 text-xs font-bold transition-colors`;
+    ? `inline-flex min-h-11 w-full items-center justify-center gap-1 px-2 py-2.5 text-[10px] font-bold transition-colors`
+    : `inline-flex min-h-11 items-center justify-center gap-1.5 px-3 py-3 text-xs font-bold transition-colors`;
 
   const layoutClass = stack
     ? 'flex min-w-[6.5rem] flex-col gap-1'
@@ -44,6 +51,7 @@ const UnitCardActions = ({
       <button
         type="button"
         onClick={onFormClick}
+        aria-label={formAriaLabel ?? formLabel}
         className={`${btn} bg-black text-white hover:bg-zinc-800`}
       >
         {formLabel}
@@ -51,6 +59,7 @@ const UnitCardActions = ({
       </button>
       <a
         href={`tel:${config.phoneNumber}`}
+        aria-label={callAriaLabel ?? callLabel}
         onClick={() => trackMarketingContact('phone')}
         className={`${btn} border border-black text-black hover:bg-black hover:text-white`}
       >
@@ -61,6 +70,7 @@ const UnitCardActions = ({
         href={waHref}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={whatsappAriaLabel ?? whatsappLabel}
         onClick={() => trackMarketingContact('whatsapp')}
         className={`${btn} border border-[#107C41] bg-[#107C41] text-white hover:bg-[#0C6836]`}
       >

@@ -45,10 +45,11 @@ const MobileBottomBar = ({
       <a
         href={`tel:${config.phoneNumber}`}
         title={L.call}
+        aria-label={L.call}
         onClick={() => trackMarketingContact('phone')}
-        className="flex flex-1 flex-col items-center gap-1 py-1 text-[10px] font-semibold tracking-wide text-zinc-800"
+        className="flex min-h-12 flex-1 flex-col items-center justify-center gap-1 py-2 text-[10px] font-semibold tracking-wide text-zinc-800"
       >
-        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-white">
+        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-black text-white">
           <Phone size={18} />
         </span>
         <span className="flex flex-col items-center gap-0.5 leading-tight">
@@ -59,10 +60,11 @@ const MobileBottomBar = ({
         href={waHref}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={`${L.whatsapp} — quick contact`}
         onClick={() => trackMarketingContact('whatsapp')}
-        className="flex flex-1 flex-col items-center gap-1 py-1 text-[10px] font-semibold tracking-wide text-zinc-800"
+        className="flex min-h-12 flex-1 flex-col items-center justify-center gap-1 py-2 text-[10px] font-semibold tracking-wide text-zinc-800"
       >
-        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#107C41] text-white">
+        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#107C41] text-white">
           <WhatsAppIcon size={20} />
         </span>
         {L.whatsapp}
@@ -70,9 +72,10 @@ const MobileBottomBar = ({
       <button
         type="button"
         onClick={scrollToLeadForm}
-        className="flex flex-1 flex-col items-center gap-1 py-1 text-[10px] font-semibold tracking-wide text-zinc-800"
+        aria-label={L.register}
+        className="flex min-h-12 flex-1 flex-col items-center justify-center gap-1 py-2 text-[10px] font-semibold tracking-wide text-zinc-800"
       >
-        <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-black bg-white text-black">
+        <span className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-black bg-white text-black">
           <FileText size={18} />
         </span>
         {L.register}

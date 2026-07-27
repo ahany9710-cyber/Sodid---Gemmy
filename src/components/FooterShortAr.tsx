@@ -58,13 +58,13 @@ const FooterShortAr = () => {
             </Link>
           </div>
         </div>
-        <div className="mt-10 border-t border-white/15 pt-6 text-sm text-gray-500">
+        <div className="mt-10 border-t border-white/15 pt-6 text-sm text-gray-400">
           <p>
             © {new Date().getFullYear()} العلامات التجارية للمشاريع ملك لأصحابها. الموقع تديره Flair Agency.
           </p>
-          <p className="mt-3 max-w-3xl text-xs leading-relaxed text-gray-500 md:text-sm">{agencyDisclaimerAr}</p>
+          <p className="mt-3 max-w-3xl text-xs leading-relaxed text-gray-400 md:text-sm">{agencyDisclaimerAr}</p>
           <p className="mt-3">
-            <Link to="/ar/privacy" className="underline underline-offset-4 hover:text-gray-300">
+            <Link to="/ar/privacy" className="text-gray-300 underline underline-offset-4 hover:text-white">
               سياسة الخصوصية
             </Link>
           </p>

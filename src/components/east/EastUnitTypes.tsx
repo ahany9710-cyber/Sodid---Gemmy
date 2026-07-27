@@ -124,6 +124,9 @@ const EastUnitTypes = () => {
                   formLabel={u.book}
                   callLabel={copy.urgency.call}
                   whatsappLabel={u.inquire}
+                  formAriaLabel={`${u.book} — ${unit.title}`}
+                  callAriaLabel={`${copy.urgency.call} — ${unit.title}`}
+                  whatsappAriaLabel={`${u.inquire} — ${unit.title}`}
                   locale={locale}
                   fontClass={fontClass}
                 />
