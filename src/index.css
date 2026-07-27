@@ -7,6 +7,19 @@
     scroll-behavior: smooth;
   }
 
+  /* Offset for fixed header when opening Ads sitelink hashes (#units, #brochure, …) */
+  section[id],
+  [id='hero'],
+  [id='brochure'],
+  [id='units'],
+  [id='location'],
+  [id='masterplan'],
+  [id='gallery'],
+  [id='faq'],
+  [id='offer'] {
+    scroll-margin-top: 5.5rem;
+  }
+
   body {
     @apply bg-white text-gray-900 antialiased;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;

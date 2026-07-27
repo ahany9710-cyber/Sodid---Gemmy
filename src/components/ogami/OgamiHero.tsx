@@ -13,11 +13,11 @@ const OgamiHero = () => {
   const h = copy.hero;
 
   const scrollToLeadForm = () => {
-    document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('brochure')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollToNext = () => {
-    document.getElementById('ogami-units')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('units')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const waHref = getWhatsAppLink({ text: whatsappOgami });

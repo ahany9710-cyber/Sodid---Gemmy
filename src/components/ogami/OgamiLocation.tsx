@@ -10,7 +10,7 @@ const OgamiLocation = () => {
   const mapSrc = l.mapSrc ?? DEFAULT_MAP;
 
   return (
-    <section id="ogami-location" className="bg-stone-50 px-6 py-16 md:px-10 md:py-24 lg:px-12">
+    <section id="location" className="bg-stone-50 px-6 py-16 md:px-10 md:py-24 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

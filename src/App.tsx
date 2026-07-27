@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FloatingActionBar from './components/FloatingActionBar';
+import HashScroll from './components/HashScroll';
 import MobileBottomBar from './components/MobileBottomBar';
 import HeaderShortAr from './components/HeaderShortAr';
 import FooterShortAr from './components/FooterShortAr';
@@ -17,6 +18,7 @@ const EastvaleLanding = lazy(() => import('./pages/EastvaleLanding'));
 function App() {
   return (
     <BrowserRouter>
+      <HashScroll />
       <Routes>
         <Route
           path="/"

@@ -28,13 +28,14 @@ const OgamiUrgencyStrip = () => {
   const u = copy.urgency;
 
   const scrollToLeadForm = () => {
-    document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('brochure')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const waHref = getWhatsAppLink({ text: whatsappOgami });
 
   return (
     <section
+      id="offer"
       className={`relative border-y border-white/10 bg-black text-white ${fontClass}`}
       aria-label={u.aria}
     >

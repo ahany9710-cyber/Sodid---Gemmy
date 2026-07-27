@@ -1,16 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { ogamiSectionNavEn } from '../data/ogamiSitelinks';
 import { sitePagesEn } from '../data/siteNavLinks';
 
 const LOGO = './sections/hero/logo.svg';
 
-const OGAMI_SECTION_LINKS = [
-  { href: '#ogami-units', label: 'Homes' },
-  { href: '#ogami-location', label: 'Location' },
-  { href: '#ogami-gallery', label: 'Gallery' },
-  { href: '#lead-form', label: 'Brochure' },
-];
+const OGAMI_SECTION_LINKS = [...ogamiSectionNavEn];
 
 const EAST_SECTION_LINKS = [
   { href: '#east-units', label: 'Units' },
@@ -35,7 +31,7 @@ const Header = () => {
       ? '#eastvale-lead-form'
       : pathname === '/east'
         ? '#east-lead-form'
-        : '#lead-form';
+        : '#brochure';
 
   const isOgamiHome = pathname === '/en' || pathname === '/ogami';
   const isEast = pathname === '/east';

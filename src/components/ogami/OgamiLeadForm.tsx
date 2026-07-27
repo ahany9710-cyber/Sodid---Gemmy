@@ -7,8 +7,8 @@ const OgamiLeadForm = ({ placement = 'primary' }: { placement?: OgamiLeadFormPla
   const { copy, whatsappOgami, fontClass } = useOgamiPage();
   const l = copy.lead;
   const isClosing = placement === 'closing';
-  const outerId = isClosing ? 'lead-form-bottom' : 'lead-form';
-  const innerId = isClosing ? 'lead-form-bottom-inner' : 'lead-form-inner';
+  const outerId = isClosing ? 'brochure-bottom' : 'brochure';
+  const innerId = isClosing ? 'brochure-bottom-inner' : 'brochure-inner';
 
   return (
     <section id={outerId} className="relative overflow-hidden bg-stone-50 px-6 py-16 md:px-10 md:py-24 lg:px-12">

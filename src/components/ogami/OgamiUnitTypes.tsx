@@ -11,13 +11,13 @@ const OgamiUnitTypes = () => {
   const u = copy.units;
   const priceGridRtl = copy.units.priceGridDir === 'rtl';
   const scrollToLeadForm = () => {
-    document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('brochure')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const sideLines = u.sideNote.split('\n');
 
   return (
-    <section id="ogami-units" className="bg-white px-6 py-16 md:px-10 md:py-24 lg:px-12">
+    <section id="units" className="bg-white px-6 py-16 md:px-10 md:py-24 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 flex flex-col gap-6 md:mb-14 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">

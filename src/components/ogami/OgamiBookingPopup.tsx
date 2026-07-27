@@ -71,7 +71,7 @@ const OgamiBookingPopup = () => {
   const handleForm = () => {
     trackPopup('cta_form');
     setOpen(false);
-    scrollToLeadFormAfterModal('lead-form');
+    scrollToLeadFormAfterModal('brochure');
   };
 
   const waHref = getWhatsAppLink({ text: b.waPrefill });

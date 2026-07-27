@@ -21,14 +21,14 @@ function WhatsAppIcon({ size = 20 }: { size?: number }) {
 interface MobileBottomBarProps {
   whatsappMessage?: string;
   labels?: { call: string; whatsapp: string; register: string };
-  /** DOM id of the lead form section (default lead-form) */
+  /** DOM id of the lead form section (default brochure on Ogami) */
   leadFormSectionId?: string;
 }
 
 const MobileBottomBar = ({
   whatsappMessage,
   labels,
-  leadFormSectionId = 'lead-form',
+  leadFormSectionId = 'brochure',
 }: MobileBottomBarProps) => {
   const scrollToLeadForm = () => {
     document.getElementById(leadFormSectionId)?.scrollIntoView({ behavior: 'smooth' });

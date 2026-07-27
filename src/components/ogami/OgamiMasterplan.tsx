@@ -14,7 +14,7 @@ const OgamiMasterplan = () => {
   }));
 
   return (
-    <section id="ogami-masterplan" className="bg-white px-6 py-16 md:px-10 md:py-24 lg:px-12">
+    <section id="masterplan" className="bg-white px-6 py-16 md:px-10 md:py-24 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
