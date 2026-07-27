@@ -19,10 +19,10 @@ const HeaderShortAr = () => {
     : pathname.startsWith('/ar/east')
       ? '/east'
       : pathname.startsWith('/ar/ogami')
-        ? '/ogami'
+        ? '/en'
         : pathname.startsWith('/ar/privacy')
           ? '/privacy'
-          : '/';
+          : '/en';
 
   const leadFormHash = pathname.startsWith('/ar/eastvale')
     ? '#eastvale-lead-form'
@@ -30,7 +30,7 @@ const HeaderShortAr = () => {
       ? '#east-lead-form'
       : '#lead-form';
 
-  const isOgamiHome = pathname === '/ar' || pathname === '/ar/ogami';
+  const isOgamiHome = pathname === '/' || pathname === '/ar' || pathname === '/ar/ogami';
   const isPrivacy = pathname === '/ar/privacy';
 
   const [scrolled, setScrolled] = useState(false);

@@ -11,7 +11,7 @@ export const ogamiAr = {
     badgePulse: true,
     badge: 'Bloom Island · الإطلاق 29 يوليو 2026',
     langFlipLabel: 'English',
-    langFlipTo: '/',
+    langFlipTo: '/en',
     h1Main: 'جون وأوجامي',
     h1Sub: 'نقدم Bloom Island',
     lead:

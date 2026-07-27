@@ -21,6 +21,21 @@ function App() {
         <Route
           path="/"
           element={
+            <div className="min-h-screen bg-white pb-24 font-arabic md:pb-0" dir="rtl" lang="ar">
+              <HeaderShortAr />
+              <OgamiLanding locale="ar" />
+              <FooterShortAr />
+              <FloatingActionBar rtl whatsappMessage={config.whatsappOgamiMessageAr} />
+              <MobileBottomBar
+                whatsappMessage={config.whatsappOgamiMessageAr}
+                labels={{ call: 'اتصل بنا', whatsapp: 'واتساب', register: 'البروشور' }}
+              />
+            </div>
+          }
+        />
+        <Route
+          path="/en"
+          element={
             <div className="min-h-screen bg-white pb-24 md:pb-0" dir="ltr" lang="en">
               <Suspense fallback={null}>
                 <Header />

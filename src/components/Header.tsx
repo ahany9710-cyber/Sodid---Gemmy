@@ -24,11 +24,11 @@ const Header = () => {
       ? '/ar/eastvale'
       : pathname === '/east'
         ? '/ar/east'
-        : pathname === '/ogami'
-          ? '/ar/ogami'
+        : pathname === '/ogami' || pathname === '/en'
+          ? '/'
           : pathname === '/privacy'
             ? '/ar/privacy'
-            : '/ar';
+            : '/';
 
   const leadFormHash =
     pathname === '/eastvale'
@@ -37,7 +37,7 @@ const Header = () => {
         ? '#east-lead-form'
         : '#lead-form';
 
-  const isOgamiHome = pathname === '/' || pathname === '/ogami';
+  const isOgamiHome = pathname === '/en' || pathname === '/ogami';
   const isEast = pathname === '/east';
   const isEastvale = pathname === '/eastvale';
   const isPrivacy = pathname === '/privacy';

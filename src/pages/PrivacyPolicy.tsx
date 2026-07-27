@@ -35,7 +35,7 @@ const PrivacyPolicy = ({ locale = 'en' }: { locale?: PrivacyLocale }) => {
       <article className="mx-auto max-w-3xl">
         <div className="mb-8 flex flex-wrap items-center gap-3">
           <Link
-            to={isAr ? '/ar' : '/'}
+            to={isAr ? '/' : '/en'}
             className="text-sm font-semibold text-zinc-600 underline-offset-4 hover:text-black hover:underline"
           >
             {c.backHome}

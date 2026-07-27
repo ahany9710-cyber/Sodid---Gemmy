@@ -17,7 +17,7 @@ export const config = {
   // Pre-filled message for wa.me links (Hero, FAB, footer, etc.)
   whatsappDefaultMessage: 'Hello, I would like to know more about SODIC properties.',
 
-  // Arabic landing (/ar) — same contact funnel as Ogami
+  // Arabic landing (/) — same contact funnel as Ogami
   whatsappDefaultMessageAr: WHATSAPP_AR_OGAMI,
 
   // Promo strip on /ar — WhatsApp message mentioning immediate delivery & 5% offer

@@ -38,7 +38,7 @@ const ThankYou = () => {
             <h1 className="mt-6 font-arabic text-3xl font-bold text-black md:text-4xl">شكراً لتواصلك معنا</h1>
             <p className="mt-3 text-gray-600">سيتواصل معك فريق المبيعات في أقرب وقت.</p>
             <Link
-              to="/ar"
+              to="/"
               className="mt-8 inline-flex bg-black px-8 py-4 text-sm font-semibold text-white"
             >
               العودة للصفحة الرئيسية
@@ -60,7 +60,7 @@ const ThankYou = () => {
           </div>
           <h1 className="mt-6 font-heading text-4xl font-bold text-black">Thank you for your inquiry</h1>
           <p className="mt-3 text-gray-600">Our team will get in touch with you shortly.</p>
-          <Link to="/" className="mt-8 inline-flex bg-black px-8 py-4 text-sm font-semibold uppercase tracking-wide text-white">
+          <Link to="/en" className="mt-8 inline-flex bg-black px-8 py-4 text-sm font-semibold uppercase tracking-wide text-white">
             Back to Home
           </Link>
         </div>

@@ -53,7 +53,7 @@ const FooterShortAr = () => {
             <Link to="/ar/privacy" className="block text-sm hover:text-white">
               سياسة الخصوصية
             </Link>
-            <Link to="/" className="block text-sm text-gray-400 underline-offset-4 hover:text-white hover:underline">
+            <Link to="/en" className="block text-sm text-gray-400 underline-offset-4 hover:text-white hover:underline">
               الموقع بالإنجليزية
             </Link>
           </div>

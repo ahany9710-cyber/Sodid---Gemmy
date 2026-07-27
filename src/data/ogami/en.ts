@@ -12,7 +12,7 @@ export const ogamiEn: OgamiCopy = {
     badgePulse: true,
     badge: 'Bloom Island · Launch 29 Jul 2026',
     langFlipLabel: 'العربية',
-    langFlipTo: '/ar',
+    langFlipTo: '/',
     h1Main: 'Ogami',
     h1Sub: 'Introducing Bloom Island',
     lead:
