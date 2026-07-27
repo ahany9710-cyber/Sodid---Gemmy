@@ -140,7 +140,7 @@ const EastUrgencyStrip = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackMarketingContact('whatsapp')}
-            className="inline-flex min-h-11 items-center justify-center gap-2 border border-[#25D366] bg-[#25D366] px-5 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-[#20bd5a]"
+            className="inline-flex min-h-11 items-center justify-center gap-2 border border-[#107C41] bg-[#107C41] px-5 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-[#0C6836]"
           >
             <MessageCircle size={16} />
             {u.whatsapp}

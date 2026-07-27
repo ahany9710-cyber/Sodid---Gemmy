@@ -76,7 +76,7 @@ const OgamiFAQ = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackMarketingContact('whatsapp')}
-            className={`${fontClass} inline-flex shrink-0 items-center gap-2 bg-[#25D366] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#20bd5a]`}
+            className={`${fontClass} inline-flex shrink-0 items-center gap-2 bg-[#107C41] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0C6836]`}
           >
             <MessageCircle size={16} />
             {f.askWa}

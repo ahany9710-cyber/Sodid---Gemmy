@@ -69,7 +69,7 @@ const HeroShortAr = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackMarketingContact('whatsapp')}
-              className="inline-flex items-center gap-2 border border-[#25D366] bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#20bd5a]"
+              className="inline-flex items-center gap-2 border border-[#107C41] bg-[#107C41] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#0C6836]"
             >
               <MessageCircle size={16} />
               واتساب

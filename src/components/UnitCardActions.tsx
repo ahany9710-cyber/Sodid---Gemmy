@@ -62,7 +62,7 @@ const UnitCardActions = ({
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => trackMarketingContact('whatsapp')}
-        className={`${btn} border border-[#25D366] bg-[#25D366] text-white hover:bg-[#20bd5a]`}
+        className={`${btn} border border-[#107C41] bg-[#107C41] text-white hover:bg-[#0C6836]`}
       >
         <MessageCircle size={compact ? 12 : 14} />
         {whatsappLabel}

@@ -246,7 +246,7 @@ const LeadForm = ({
                 ? undefined
                 : {
                     scale: 1.02,
-                    backgroundColor: '#1aad4f',
+                    backgroundColor: '#0C6836',
                     boxShadow: '0 10px 28px rgba(26,173,79,0.5)',
                   }
             }
@@ -267,7 +267,7 @@ const LeadForm = ({
               backgroundColor: { duration: 0.2 },
               scale: { duration: 0.2 },
             }}
-            className={`inline-flex w-full items-center justify-center rounded-none bg-[#25D366] px-8 py-4 text-base font-bold tracking-wide text-white transition-colors duration-200 hover:bg-[#20bd5a] disabled:cursor-not-allowed disabled:bg-zinc-400 disabled:shadow-none ${isAr ? '' : 'uppercase'}`}
+            className={`inline-flex w-full items-center justify-center rounded-none bg-[#107C41] px-8 py-4 text-base font-bold tracking-wide text-white transition-colors duration-200 hover:bg-[#0C6836] disabled:cursor-not-allowed disabled:bg-zinc-400 disabled:shadow-none ${isAr ? '' : 'uppercase'}`}
           >
             {isSubmitting ? submittingLabel : submitLabel}
           </motion.button>

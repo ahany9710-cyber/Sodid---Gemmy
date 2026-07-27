@@ -46,7 +46,7 @@ const FloatingActionBar = ({ whatsappMessage, rtl = false }: FloatingActionBarPr
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => trackMarketingContact('whatsapp')}
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-all duration-200 hover:scale-105 hover:bg-[#20bd5a]"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#107C41] text-white shadow-xl transition-all duration-200 hover:scale-105 hover:bg-[#0C6836]"
         aria-label={rtl ? 'واتساب' : 'Contact via WhatsApp'}
       >
         <WhatsAppIcon size={22} />

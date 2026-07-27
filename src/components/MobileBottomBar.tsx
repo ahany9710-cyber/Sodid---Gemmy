@@ -62,7 +62,7 @@ const MobileBottomBar = ({
         onClick={() => trackMarketingContact('whatsapp')}
         className="flex flex-1 flex-col items-center gap-1 py-1 text-[10px] font-semibold tracking-wide text-zinc-800"
       >
-        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-white">
+        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#107C41] text-white">
           <WhatsAppIcon size={20} />
         </span>
         {L.whatsapp}
