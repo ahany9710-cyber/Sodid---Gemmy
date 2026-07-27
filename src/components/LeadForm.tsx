@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MessageCircle, Phone } from 'lucide-react';
 import { config } from '../config';
@@ -269,6 +269,28 @@ const LeadForm = ({
           >
             {isSubmitting ? submittingLabel : submitLabel}
           </motion.button>
+
+          <p className="text-xs leading-relaxed text-zinc-500">
+            {isAr ? (
+              <>
+                بإرسال النموذج فإنك توافق على التواصل بشأن استفسارك، وتقر بأن الموقع تديره Flair Agency (وليست
+                المطور). راجع{' '}
+                <Link to="/ar/privacy" className="underline underline-offset-2 hover:text-black">
+                  سياسة الخصوصية
+                </Link>
+                .
+              </>
+            ) : (
+              <>
+                By submitting, you agree to be contacted about your inquiry and acknowledge this site is operated by
+                Flair Agency (not the developer). See our{' '}
+                <Link to="/privacy" className="underline underline-offset-2 hover:text-black">
+                  Privacy Policy
+                </Link>
+                .
+              </>
+            )}
+          </p>
         </form>
 
         <div className="mt-8 border-t border-gray-100 pt-6">

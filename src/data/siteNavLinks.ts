@@ -4,12 +4,12 @@ export const sitePagesEn = [
   { to: '/', label: 'Home' },
   { to: '/east', label: 'SODIC East' },
   { to: '/eastvale', label: 'Eastvale' },
-  { to: '/ogami', label: 'Ogami' },
+  { to: '/privacy', label: 'Privacy' },
 ] as const;
 
 export const sitePagesAr = [
   { to: '/ar', label: 'الرئيسية' },
   { to: '/ar/east', label: 'SODIC East' },
   { to: '/ar/eastvale', label: 'Eastvale · سوديك المستقبل' },
-  { to: '/ar/ogami', label: 'Ogami · أوجامي' },
+  { to: '/ar/privacy', label: 'سياسة الخصوصية' },
 ] as const;

@@ -5,14 +5,14 @@
 
 /** Arabic sales funnel — جون وأوجامي on /ar + /ar/ogami + forms. */
 const WHATSAPP_AR_OGAMI =
-  'مرحباً، مهتم بمشاريع جون وأوجامي من سوديك في الساحل الشمالي. ممكن تفاصيل الأسعار والتوفر؟';
+  'مرحباً، مهتم بإطلاق Bloom Island في جون وأوجامي من سوديك. عايز تفاصيل الأولوية وEOI الـ 250,000 ج.م. والأسعار؟';
 
 export const config = {
   // Formspree form ID — submissions go to the email registered at formspree.io
-  formspreeFormId: 'xdavjaya',
+  formspreeFormId: 'xbdnqpva',
 
   // WhatsApp number (without + or spaces for wa.me) — same tel: + whatsapp.site-wide
-  whatsappNumber: '201062911110',
+  whatsappNumber: '20120506690',
 
   // Pre-filled message for wa.me links (Hero, FAB, footer, etc.)
   whatsappDefaultMessage: 'Hello, I would like to know more about SODIC properties.',
@@ -29,7 +29,7 @@ export const config = {
 
   // /ogami — English Ogami landing
   whatsappOgamiMessageEn:
-    'Hello, I am interested in Ogami / Botanica Town on the North Coast by SODIC. Please share pricing and payment plans.',
+    'Hello, I am interested in the Bloom Island launch at Ogami on the North Coast by SODIC. Please share priority access, the EGP 250,000 refundable EOI, and pricing.',
 
   // /ar/east + /east — SODIC East (ready 5% + Oak)
   whatsappEastMessageAr:
@@ -46,13 +46,13 @@ export const config = {
     'Hello, I am interested in Eastvale at Mada City — pricing, availability, and payment plans.',
 
   // Phone for tel: links (with country code)
-  phoneNumber: '+201062911110',
+  phoneNumber: '+20120506690',
 
   // Display (+20…) for footer / accessibility
-  phoneDisplay: '+20 106 291 1110',
+  phoneDisplay: '+20 120 506 6900',
 
   /** Local Egyptian format — use where you surface the number in UI */
-  phoneDisplayLocal: '0106 291 1110',
+  phoneDisplayLocal: '0120 506 6900',
   // Optional: add conversion_id + conversion_label from Google Ads for thank-you page trackConversion()
   // Google tag AW-17012763903 is loaded in index.html (gtag.js).
 

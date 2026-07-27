@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { MessageCircle, Phone } from 'lucide-react';
 import { config } from '../config';
+import { agencyDisclaimerAr } from '../data/legalCopy';
 import { trackMarketingContact } from '../utils/trackMarketing';
 import { getWhatsAppLink } from '../utils/whatsapp';
 
@@ -14,14 +15,15 @@ const FooterShortAr = () => {
           <div>
             <img
               src="/sections/hero/logo.svg"
-              alt="سوديك"
+              alt="مشاريع سوديك — تسويق Flair Agency"
               width={120}
               height={24}
               decoding="async"
               className="h-6 w-auto brightness-0 invert"
             />
             <p className="mt-4 max-w-md text-sm leading-relaxed text-gray-400">
-              مشاريع عقارية متكاملة في مواقع استراتيجية. تواصل معنا للاستفسار أو حجز موعد.
+              تسويق بواسطة <span className="text-gray-300">Flair Agency</span> — شريك معتمد بحقوق تسويق موقّعة. لسنا
+              المطور العقاري.
             </p>
           </div>
           <div className="space-y-3">
@@ -33,7 +35,7 @@ const FooterShortAr = () => {
               className="flex items-center gap-2 text-sm hover:text-white"
             >
               <Phone size={15} />
-              <span>اتصل بنا</span>
+              <span>{config.phoneDisplayLocal}</span>
             </a>
             <a
               href={waHref}
@@ -46,14 +48,26 @@ const FooterShortAr = () => {
               واتساب
             </a>
           </div>
-          <div>
-            <Link to="/" className="text-sm text-gray-400 underline-offset-4 hover:text-white hover:underline">
+          <div className="space-y-3">
+            <p className="text-sm font-semibold uppercase tracking-wide text-white">قانوني</p>
+            <Link to="/ar/privacy" className="block text-sm hover:text-white">
+              سياسة الخصوصية
+            </Link>
+            <Link to="/" className="block text-sm text-gray-400 underline-offset-4 hover:text-white hover:underline">
               الموقع بالإنجليزية
             </Link>
           </div>
         </div>
         <div className="mt-10 border-t border-white/15 pt-6 text-sm text-gray-500">
-          © {new Date().getFullYear()} سوديك. جميع الحقوق محفوظة.
+          <p>
+            © {new Date().getFullYear()} العلامات التجارية للمشاريع ملك لأصحابها. الموقع تديره Flair Agency.
+          </p>
+          <p className="mt-3 max-w-3xl text-xs leading-relaxed text-gray-500 md:text-sm">{agencyDisclaimerAr}</p>
+          <p className="mt-3">
+            <Link to="/ar/privacy" className="underline underline-offset-4 hover:text-gray-300">
+              سياسة الخصوصية
+            </Link>
+          </p>
         </div>
       </div>
     </footer>

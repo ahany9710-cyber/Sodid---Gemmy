@@ -9,37 +9,31 @@ import { config } from './config';
 
 const Header = lazy(() => import('./components/Header'));
 const Footer = lazy(() => import('./components/Footer'));
-const Landing = lazy(() => import('./pages/Landing'));
-const LandingShortAr = lazy(() => import('./pages/LandingShortAr'));
 const ThankYou = lazy(() => import('./pages/ThankYou'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const EastLanding = lazy(() => import('./pages/EastLanding'));
 const EastvaleLanding = lazy(() => import('./pages/EastvaleLanding'));
 
-function PageFallback() {
-  return <div className="min-h-[40vh] bg-white" aria-hidden />;
-}
-
 function App() {
-  const arWa = config.whatsappDefaultMessageAr;
-
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/"
           element={
-            <div className="min-h-screen bg-white pb-24 md:pb-0">
+            <div className="min-h-screen bg-white pb-24 md:pb-0" dir="ltr" lang="en">
               <Suspense fallback={null}>
                 <Header />
               </Suspense>
-              <Suspense fallback={<PageFallback />}>
-                <Landing />
-              </Suspense>
+              <OgamiLanding locale="en" />
               <Suspense fallback={null}>
                 <Footer />
               </Suspense>
-              <FloatingActionBar />
-              <MobileBottomBar labels={{ call: 'Call us', whatsapp: 'WhatsApp', register: 'Register' }} />
+              <FloatingActionBar whatsappMessage={config.whatsappOgamiMessageEn} />
+              <MobileBottomBar
+                whatsappMessage={config.whatsappOgamiMessageEn}
+                labels={{ call: 'Call us', whatsapp: 'WhatsApp', register: 'Brochure' }}
+              />
             </div>
           }
         />
@@ -48,14 +42,12 @@ function App() {
           element={
             <div className="min-h-screen bg-white pb-24 font-arabic md:pb-0" dir="rtl" lang="ar">
               <HeaderShortAr />
-              <Suspense fallback={<PageFallback />}>
-                <LandingShortAr />
-              </Suspense>
+              <OgamiLanding locale="ar" />
               <FooterShortAr />
-              <FloatingActionBar rtl whatsappMessage={arWa} />
+              <FloatingActionBar rtl whatsappMessage={config.whatsappOgamiMessageAr} />
               <MobileBottomBar
-                whatsappMessage={arWa}
-                labels={{ call: 'اتصل بنا', whatsapp: 'واتساب', register: 'تسجيل' }}
+                whatsappMessage={config.whatsappOgamiMessageAr}
+                labels={{ call: 'اتصل بنا', whatsapp: 'واتساب', register: 'البروشور' }}
               />
             </div>
           }
@@ -70,7 +62,7 @@ function App() {
               <FloatingActionBar rtl whatsappMessage={config.whatsappOgamiMessageAr} />
               <MobileBottomBar
                 whatsappMessage={config.whatsappOgamiMessageAr}
-                labels={{ call: 'اتصل بنا', whatsapp: 'واتساب', register: 'تسجيل' }}
+                labels={{ call: 'اتصل بنا', whatsapp: 'واتساب', register: 'البروشور' }}
               />
             </div>
           }
@@ -89,7 +81,7 @@ function App() {
               <FloatingActionBar whatsappMessage={config.whatsappOgamiMessageEn} />
               <MobileBottomBar
                 whatsappMessage={config.whatsappOgamiMessageEn}
-                labels={{ call: 'Call us', whatsapp: 'WhatsApp', register: 'Register' }}
+                labels={{ call: 'Call us', whatsapp: 'WhatsApp', register: 'Brochure' }}
               />
             </div>
           }
@@ -171,6 +163,34 @@ function App() {
                 leadFormSectionId="eastvale-lead-form"
                 labels={{ call: 'Call us', whatsapp: 'WhatsApp', register: 'Register' }}
               />
+            </div>
+          }
+        />
+        <Route
+          path="/privacy"
+          element={
+            <div className="min-h-screen bg-white" dir="ltr" lang="en">
+              <Suspense fallback={null}>
+                <Header />
+              </Suspense>
+              <Suspense fallback={null}>
+                <PrivacyPolicy locale="en" />
+              </Suspense>
+              <Suspense fallback={null}>
+                <Footer />
+              </Suspense>
+            </div>
+          }
+        />
+        <Route
+          path="/ar/privacy"
+          element={
+            <div className="min-h-screen bg-white font-arabic" dir="rtl" lang="ar">
+              <HeaderShortAr />
+              <Suspense fallback={null}>
+                <PrivacyPolicy locale="ar" />
+              </Suspense>
+              <FooterShortAr />
             </div>
           }
         />

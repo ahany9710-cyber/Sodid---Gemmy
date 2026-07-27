@@ -10,7 +10,6 @@ import type { OgamiLocale } from '../data/ogamiCopy';
 const OgamiUrgencyStrip = lazy(() => import('../components/ogami/OgamiUrgencyStrip'));
 const OgamiLocation = lazy(() => import('../components/ogami/OgamiLocation'));
 const OgamiMasterplan = lazy(() => import('../components/ogami/OgamiMasterplan'));
-const OgamiAmenities = lazy(() => import('../components/ogami/OgamiAmenities'));
 const OgamiGallery = lazy(() => import('../components/ogami/OgamiGallery'));
 const OgamiFAQ = lazy(() => import('../components/ogami/OgamiFAQ'));
 
@@ -29,14 +28,14 @@ function OgamiMetaAndAnalytics() {
       if (typeof window.fbq === 'function') {
         window.fbq('track', 'ViewContent', {
           content_name: 'Ogami',
-          content_category: 'Botanica Town',
+          content_category: 'Bloom Island',
           content_type: 'real_estate',
         });
       }
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'view_item', {
           item_id: 'ogami',
-          item_name: 'Ogami / Botanica Town',
+          item_name: 'Ogami / Bloom Island',
           item_category: 'real_estate',
         });
       }
@@ -71,9 +70,6 @@ function OgamiLandingBody() {
       </Suspense>
       <Suspense fallback={<SectionPlaceholder minHeight="min-h-[48rem]" />}>
         <OgamiMasterplan />
-      </Suspense>
-      <Suspense fallback={<SectionPlaceholder minHeight="min-h-[56rem]" />}>
-        <OgamiAmenities />
       </Suspense>
       <Suspense fallback={<SectionPlaceholder minHeight="min-h-[50vh]" />}>
         <OgamiGallery />
