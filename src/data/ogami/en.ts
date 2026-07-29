@@ -2,21 +2,21 @@ import type { OgamiCopy } from './ar';
 
 export const ogamiEn: OgamiCopy = {
   meta: {
-    title: 'Ogami · Bloom Island | Ras El Hekma launch — refundable EOI | SODIC',
+    title: 'June North Coast by SODIC | Ogami prices — Ras El Hikma / Ras El Hekma',
     description:
-      'Bloom Island at Ogami by SODIC on Ras El Hekma. Contemporary homes in lush landscapes with signature clubs. Priority access via fully refundable EGP 250,000 EOI. Launch 29 Jul 2026.',
+      'June by SODIC on the North Coast: SODIC June & Ogami at Ras El Hikma (Ras El Hekma). June North Coast prices from EGP 28M, finished homes & chalets. Refundable EGP 250K EOI. Launch 29 Jul 2026.',
     numberLocale: 'en-US',
   },
   hero: {
-    imgAlt: 'Ogami Bloom Island — North Coast',
+    imgAlt: 'June North Coast by SODIC — Ogami Bloom Island at Ras El Hekma',
     badgePulse: true,
     badge: 'Bloom Island · Launch 29 Jul 2026',
     langFlipLabel: 'العربية',
     langFlipTo: '/',
-    h1Main: 'Ogami',
-    h1Sub: 'Introducing Bloom Island',
+    h1Main: 'June & Ogami',
+    h1Sub: 'June North Coast by SODIC',
     lead:
-      'A collection of contemporary homes set within lush landscapes, connected by signature clubs, and designed for a more refined way of coastal living.',
+      'SODIC June on Ras El Hikma / Ras El Hekma — contemporary homes and finished chalets at Ogami Bloom Island, with clear June SODIC prices and flexible payment plans.',
     card1Label: 'Garden & Horizon Houses',
     card1Price: 'From EGP 28M',
     card1Sq: 'Starting price',
@@ -47,9 +47,9 @@ export const ogamiEn: OgamiCopy = {
     dir: 'ltr',
   },
   stats: {
-    eyebrow: 'Why Ogami?',
-    title: 'Everything iconic about the coast — in one address',
-    subtitle: 'By SODIC — 30+ years of delivery and communities with 30,000+ residents.',
+    eyebrow: 'Why SODIC June?',
+    title: 'June North Coast by SODIC — one coastal address',
+    subtitle: 'By SODIC — 30+ years of delivery and communities with 30,000+ residents on the North Coast.',
     items: [
       { icon: 'map', value: 3, suffix: ' min', label: 'to Ras El Hekma' },
       { icon: 'waves', value: 120_000, prefix: '+', suffix: ' m²', label: 'fresh-water lagoons' },
@@ -69,20 +69,20 @@ export const ogamiEn: OgamiCopy = {
   },
   location: {
     eyebrow: 'Location',
-    title: 'On the waterfront — core of New North Coast',
+    title: 'On the waterfront — SODIC Ras El Hikma on the North Coast',
     lead:
-      'Ogami sits on the international coastal road between Ras El Hekma and Fouka — quick beach access with key destinations reachable in under an hour.',
+      'SODIC June and Ogami sit on the international coastal road between Ras El Hekma / Ras El Hikma and Fouka — June by SODIC with quick beach access and key North Coast destinations under an hour away.',
     mapSrc: '/sections/ogami/location-map.webp',
-    mapCaption: 'Ogami directly on the international coastal motorway',
-    mapAlt: 'Ogami master location between Ras El Hekma and Fouka',
+    mapCaption: 'SODIC June & Ogami on the North Coast coastal motorway',
+    mapAlt: 'June North Coast by SODIC — master location at Ras El Hekma',
     distances: [
       {
         icon: 'waves',
         time: '3 min',
         label: 'Ras El Hekma',
-        detail: 'The North Coast\'s best-known seafront',
+        detail: 'The North Coast\'s best-known seafront — also searched as Ras El Hikma',
       },
-      { icon: 'zap', time: '5 min', label: 'June', detail: 'Neighbouring SODIC destination' },
+      { icon: 'zap', time: '5 min', label: 'SODIC June', detail: 'Neighbouring June by SODIC destination' },
       {
         icon: 'sun',
         time: '35 min',
@@ -193,10 +193,10 @@ export const ogamiEn: OgamiCopy = {
     ],
   },
   units: {
-    eyebrow: 'Homes',
-    title: 'Bloom Island collections',
+    eyebrow: 'June North Coast prices',
+    title: 'Bloom Island collections — June SODIC prices',
     lead:
-      'Four contemporary home types for refined coastal living — fully finished with air-conditioning. Priority access via a fully refundable EGP 250,000 EOI.',
+      'June SODIC prices at Bloom Island: fully finished homes and chalets with AC — from EGP 28M. Priority access via a fully refundable EGP 250,000 EOI.',
     sideNote: 'Launch 29 Jul 2026 · Delivery 2029.\nMaintenance 8% · Payment plans up to 8 years.',
     disclaimer: '* All visuals are illustrative and may change.',
     book: 'Get the brochure',
@@ -317,8 +317,8 @@ export const ogamiEn: OgamiCopy = {
   },
   gallery: {
     eyebrow: 'Gallery',
-    title: 'See Ogami the way it feels on the sea',
-    lead: 'Official SODIC renders — capturing the spirit of new coastal life on Ras El Hekma.',
+    title: 'See June & Ogami the way it feels on the sea',
+    lead: 'Official SODIC renders — June North Coast by SODIC and new coastal life on Ras El Hikma / Ras El Hekma.',
     slides: [
       { id: 'lagoon', src: '/sections/ogami/lagoon.webp', caption: '+120,000 m² swimming lagoons at the heart of the community' },
       { id: 'render-1', src: '/sections/ogami/building-render-1.webp', caption: 'Retail & cafés on the main plaza' },
@@ -354,16 +354,24 @@ export const ogamiEn: OgamiCopy = {
     askWa: 'WhatsApp sales',
     items: [
       {
+        q: 'What is June North Coast by SODIC?',
+        a: 'June by SODIC (SODIC June) is a North Coast destination next to Ogami at Ras El Hikma / Ras El Hekma. SODIC Ras El Hikma and SODIC Ras El Hekma both refer to this June–Ogami coastal corridor.',
+      },
+      {
         q: 'Where exactly is Ogami on the North Coast?',
-        a: 'On the coastal motorway between Ras El Hekma and Fouka — 3 minutes to Ras El Hekma, 5 to June, 35 to Sidi Abdel Rahman, 55 to Alamein International Airport — with direct beach access and 800 m of private shoreline.',
+        a: 'On the coastal motorway between Ras El Hekma and Fouka — 3 minutes to Ras El Hikma, 5 to SODIC June, 35 to Sidi Abdel Rahman, 55 to Alamein International Airport — with direct beach access and 800 m of private shoreline.',
+      },
+      {
+        q: 'What are June North Coast prices / June SODIC prices?',
+        a: 'June SODIC prices at Bloom Island start from EGP 28M (Garden & Horizon), EGP 36M (Townvillas), EGP 45M (standalone villas), and EGP 50M (twin villas), with a fully refundable EGP 250K EOI.',
       },
       {
         q: 'What is Bloom Island?',
-        a: 'Bloom Island is the current Ogami launch — contemporary homes in lush landscapes connected by signature clubs. Collections include Garden & Horizon Houses from EGP 28M, Townvillas from EGP 36M, one-storey standalone villas from EGP 45M, and twin villas from EGP 50M.',
+        a: 'Bloom Island is the current Ogami launch within June North Coast by SODIC — contemporary homes and finished chalets connected by signature clubs.',
       },
       {
         q: 'How does the EGP 250,000 EOI work?',
-        a: 'Priority access is open through a fully refundable EGP 250,000 expression of interest ahead of the 29 Jul 2026 launch. Our sales team walks you through the process and next steps.',
+        a: 'Priority access is open through a fully refundable EGP 250,000 expression of interest ahead of the 29 Jul 2026 launch. Our SODIC sales team walks you through the process and next steps.',
       },
       {
         q: 'What payment plans exist?',
@@ -371,7 +379,7 @@ export const ogamiEn: OgamiCopy = {
       },
       {
         q: 'When is delivery and are units finished?',
-        a: 'Homes deliver fully finished with AC in 2029. Botanica Town chalets remain part of the wider Ogami offering — ask sales for current availability alongside Bloom Island.',
+        a: 'Homes deliver fully finished with AC in 2029. Finished chalets at Botanica Town remain part of the wider Ogami offering alongside Bloom Island.',
       },
     ],
   },

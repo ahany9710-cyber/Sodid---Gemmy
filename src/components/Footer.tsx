@@ -19,6 +19,10 @@ const Footer = () => {
               Marketed by <span className="text-gray-300">Flair Agency</span> — authorized partner with signed
               marketing rights. Not the real estate developer.
             </p>
+            <p className="mt-3 max-w-sm text-xs leading-relaxed text-gray-400">
+              June North Coast by SODIC · SODIC June · Ras El Hikma / Ras El Hekma — June SODIC prices &amp; finished
+              homes at Ogami.
+            </p>
           </div>
 
           <div>

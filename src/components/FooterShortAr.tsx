@@ -25,6 +25,10 @@ const FooterShortAr = () => {
               تسويق بواسطة <span className="text-gray-300">Flair Agency</span> — شريك معتمد بحقوق تسويق موقّعة. لسنا
               المطور العقاري.
             </p>
+            <p className="mt-3 max-w-md text-xs leading-relaxed text-gray-400">
+              قرية جون سوديك الساحل الشمالي · سوديك رأس الحكمة · مشروع جون وأوجامي — أسعار وشاليهات متشطبة من شركة
+              سوديك.
+            </p>
           </div>
           <div className="space-y-3">
             <p className="text-sm font-semibold uppercase tracking-wide text-white">تواصل</p>
